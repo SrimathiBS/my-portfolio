@@ -1,0 +1,390 @@
+/* style.css */
+body {
+    margin: 0;
+    
+    background: #000000;
+    color: #edcfcf;
+    
+  }
+  body, * {
+    cursor: none;
+  }
+  .grid-container {
+    display: grid;
+    
+
+    grid-template-areas:
+      "header header header"
+      "intro photo project"
+      "skills contact project"
+      "footer footer footer";
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-rows: 0fr 0.9fr 0.5fr 0fr;
+
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .header {
+    grid-area: header;
+    background: #c08888;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 2.8rem;
+    border-radius: 6px;
+    color: #39001f;
+    letter-spacing: 3px;
+  }
+  
+  .grid-item {
+    background: #5a1c1c;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+
+  .intro { grid-area: intro; }
+  .photo { grid-area: photo; }
+  .project { grid-area: project; }
+  .skills { grid-area: skills; }
+  .contact { grid-area: contact; }
+  .footer {
+    grid-area: footer;
+    background: #000000;
+    text-align: center;
+    padding:0rem;
+    
+    
+  }
+
+
+  .photo {
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    padding: 0;
+    background: none; /* Optional: removes background if not needed */
+    border-radius: 10px; /* Keep this if you want rounded corners */
+    overflow: hidden;
+    grid-area:photo; /* Make sure your grid-template-areas has a "photo" */
+  }
+  
+  .profile-photo {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    min-width: 100px;
+    
+  }
+  
+  .grid-item:hover {
+    transform: scale(0.98);
+  }
+  
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #367555;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    /* transition: transform 0.1s; */
+  }
+  
+  .cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccfdeb;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50% ,-50%);
+    transition: transform 0.2s ease-in-out;
+  }
+
+
+  .cursor-dot, .cursor-outline {
+    pointer-events: none;
+    transition: transform 0.1s;
+  }
+  body, button, a, input, textarea, select, div {
+    cursor: none !important;
+  }
+  p{
+    font-size: 100%;
+  }
+  h1{
+    font-family: "Italiana", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3.5rem;
+    margin-top: 0%;
+    padding: 0%;
+  }
+  h2{
+    font-family: "Italiana", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2rem;
+    margin-top: 0rem;
+    margin-bottom: 0%;
+    padding: 0%;
+  }
+  h1, h2{
+    line-height: 1.2; /* Adjust this number to what feels good */
+    margin-bottom: 0.5rem;
+  }
+  h2,h1,p{
+    line-height: 0.5;
+  }
+  p,ul{
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    font-size: medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .header{
+    font-family: 'Poppins', sans-serif;
+    font-size: semibolt;
+  }
+  h2{
+    padding-top: 2rem;
+  }
+  .project h2{
+    font-family: "Italiana", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2.4rem;
+    margin-top: 0rem;
+    margin-bottom: 0.4rem;
+    padding: 0%;
+    line-height: 1;
+  }
+  h3{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.6rem;
+  }
+  .skills li{
+    line-height: 2rem;
+    margin-bottom: 0%;
+  }
+  .skills h2{
+    margin-bottom: 1rem;
+  }
+  .email-link{
+    position: relative;
+    color: #edcfcf;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+  }
+  
+  /* underline element */
+  .email-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 2px;
+    background-color: #367555;
+    transition: transform 0.3s ease-out;
+  }
+  
+  /* on hover: scale out from center */
+  .email-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+  /* optional color change on hover */
+  .email-link:hover {
+    color: #ad6b6b;
+    letter-spacing: 2px;
+  }
+  a{
+    color: #edcfcf;
+  }
+  .hover-underline {
+    position: relative;
+    color: #edcfcf;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1rem;
+    
+  }
+  
+  .hover-underline::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 2px;
+    background-color: #367555;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .hover-underline:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
+  
+  .hover-underline:hover {
+    color: #ad6b6b;
+    letter-spacing: 2px;
+  }
+  .contact h2{
+    margin-bottom: 1.5rem; 
+  }
+.contact a{
+    line-height: 2rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+
+.header {
+    
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  
+  .header::after {
+    content: '';
+    position: relative;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin: 5px auto 0;
+    background: #720000;
+    transition: width 0.4s ease;
+  }
+  
+  .header:hover {
+    letter-spacing: 5px;
+    font-weight: 500;
+    color: #500000;
+  }
+  
+  .header:hover::after {
+    width: 100%;
+  }
+
+/* mobile responsive */
+
+/* Existing CSS remains unchanged */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .grid-container {
+      grid-template-areas:
+        "header"
+        "intro"
+        "photo"
+        "project"
+        "skills"
+        "contact"
+        "footer"; /* Stack all sections vertically on small screens */
+      grid-template-columns: 1fr; /* Single column */
+      grid-template-rows: auto; /* Auto rows */
+      gap: 15px; /* Slightly smaller gap for mobile */
+      padding: 15px; /* Reduce padding */
+    }
+  
+    .header {
+      font-size: 1.5rem; /* Larger header font for better readability */
+      text-align: center; /* Center the header text */
+    }
+  
+    .intro, .project, .skills, .contact {
+      padding: 1rem 0.5rem; /* Slightly reduced padding for mobile */
+    }
+  
+    .photo {
+      padding: 0; /* Remove extra padding */
+      display: flex;
+      justify-content: center;
+    }
+  
+    .profile-photo {
+      max-width: 90vw; /* Make profile photo responsive to screen width */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Slightly rounder corners on mobile */
+    }
+  
+    h1 {
+      font-size: 2.5rem; /* Reduce large heading size */
+    }
+  
+    h2 {
+      font-size: 1.5rem; /* Reduce secondary heading size */
+      padding-top: 1rem; /* Reduce top padding */
+    }
+  
+    h3 {
+      font-size: 1.2rem; /* Smaller project subheadings */
+    }
+  
+    p, ul {
+      font-size: 0.9rem; /* Slightly smaller paragraph and list text */
+    }
+  
+    .contact a {
+      font-size: 1.1rem; /* Slightly larger clickable links */
+    }
+  }
+
+  /* animation */
+
+ 
+  /* Initial hidden state */
+.animate-on-load {
+    opacity: 0;
+    transform: translateX(-100px); /* Default: slide in from left */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  
+  /* Visible state (triggered by JS) */
+  .animate-on-load.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Slide in from right for selected sections */
+  .animate-right {
+    transform: translateX(100px); /* Start from right edge */
+  }
+  
+  .animate-right.visible {
+    transform: translateX(0);
+  }
+  
