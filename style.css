@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-     /* Prevent scrolling */
+    overflow: auto;
   }
 
 body {
@@ -12,6 +12,7 @@ body {
     padding: 0%;
     background: #000000;
     color: #edcfcf;
+    height: 100vh;
     
   }
   body, * {
@@ -19,8 +20,9 @@ body {
   }
   .grid-container {
     display: grid;
-    height: 100vh;
-    overflow: hidden;
+    height: auto;
+    overflow: auto;
+    min-width: 100vw;
 
     grid-template-areas:
       "header header header"
@@ -319,7 +321,37 @@ body {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    body {
+      
+      height: auto; /* Remove fixed height to avoid scrolling issues */
+      background-color: black;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      
+    }
+  
+    h1, h2, h3 {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  
+    .card, .section {
+      margin: 10px auto;
+      padding: 15px;
+      width: 100%;
+      max-width: 90vw;
+      box-sizing: border-box;
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  
     .grid-container {
+      display: grid; /* Use grid */
       grid-template-areas:
         "header"
         "intro"
@@ -327,55 +359,73 @@ body {
         "project"
         "skills"
         "contact"
-        "footer"; /* Stack all sections vertically on small screens */
+        "footer"; /* Stack sections vertically */
       grid-template-columns: 1fr; /* Single column */
-      grid-template-rows: auto; /* Auto rows */
-      gap: 15px; /* Slightly smaller gap for mobile */
-      padding: 15px; /* Reduce padding */
+      grid-template-rows: auto;
+      gap: 10px; /* Smaller gap */
+      padding: 0 16px;
+      width: 100vw;
+      max-width: 100vw;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
   
     .header {
-      font-size: 1.5rem; /* Larger header font for better readability */
-      text-align: center; /* Center the header text */
+      font-size: 1.5rem;
+      text-align: center;
     }
+
+    .header, .intro, .photo, .project, .skills, .contact, .footer {
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box; /* Padding included */
+        border-radius: 10px;    /* Keep your rounded corners */
+        margin: 0 auto;         /* Center if smaller */
+        padding: 15px;          
+      }
+    
   
     .intro, .project, .skills, .contact {
-      padding: 1rem 0.5rem; /* Slightly reduced padding for mobile */
+      padding: 1rem 0.5rem;
     }
   
     .photo {
-      padding: 0; /* Remove extra padding */
+      padding: 0;
       display: flex;
       justify-content: center;
     }
   
-    .profile-photo {
-      max-width: 90vw; /* Make profile photo responsive to screen width */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 10px; /* Slightly rounder corners on mobile */
+    img, .profile-photo {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   
     h1 {
-      font-size: 2.5rem; /* Reduce large heading size */
+      font-size: 2.5rem;
     }
   
     h2 {
-      font-size: 1.5rem; /* Reduce secondary heading size */
-      padding-top: 1rem; /* Reduce top padding */
+      font-size: 1.5rem;
+      padding-top: 1rem;
     }
   
     h3 {
-      font-size: 1.2rem; /* Smaller project subheadings */
+      font-size: 1.2rem;
     }
   
     p, ul {
-      font-size: 0.9rem; /* Slightly smaller paragraph and list text */
+      font-size: 0.9rem;
     }
   
     .contact a {
-      font-size: 1.1rem; /* Slightly larger clickable links */
+      font-size: 1.1rem;
     }
   }
+  
 
   /* animation */
 
