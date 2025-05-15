@@ -4,7 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+     /* Prevent scrolling */
   }
 
 body {
@@ -52,7 +52,7 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    overflow-y:inherit;
+    overflow-y:auto;
   }
   
   
