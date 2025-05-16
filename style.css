@@ -20,7 +20,7 @@ body {
   }
   .grid-container {
     display: grid;
-    height: auto;
+    height: 100vh;
     overflow: auto;
     min-width: 100vw;
 
@@ -34,6 +34,7 @@ body {
 
     gap: 10px;
     padding: 10px;
+    align-items: stretch;
   }
   
   .header {
@@ -102,7 +103,10 @@ body {
     border-radius: 12px;
     object-fit: cover;
     min-width: 100px;
-    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
   }
   
   .grid-item:hover {
@@ -314,10 +318,10 @@ body {
   .header:hover::after {
     width: 100%;
   }
-
+  
 /* mobile responsive */
 
-/* Existing CSS remains unchanged */
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
